@@ -53,7 +53,7 @@ In case of bugs, collaboration or support, please contact me through email: *jof
 
 ## Licence
 
-This work is protected under [MIT LICENCE](LICENCE).
+This work is protected under [MIT LICENCE](LICENCE.txt).
 
 >>COPYRIGHT &copy; PHILIP OWINO 2021
 

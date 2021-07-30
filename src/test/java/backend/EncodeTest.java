@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class EncodeTest {
     @Test
-    public void encode_lowerCase_char() {
+    public void encode_encodeLowerCaseWithinAlphabetRange_char() {
         // Encode a lower case letter a with key of 1
         Encode testEncode = new Encode();
         char expectedOutput = 'b';
@@ -18,10 +18,19 @@ class EncodeTest {
     }
 
     @Test
-    void encode_upperCaseAWithKey1_char() {
+    void encode_encodeUpperCaseWithinAlphabetRange_char() {
         // Encode uppercase letter 'A' with key of 1;
         Encode testEncode = new Encode();
         char expectedOutput = 'B';
         Assertions.assertEquals(expectedOutput,testEncode.encode('A',1));
+    }
+
+    @Test
+    void encode_leaveNonAlphabetsAsIs_char() {
+        // Non alphabets will not be converted
+        Encode testEncode = new Encode();
+        char expected = 1;
+        Assertions.assertEquals(expected,testEncode.encode((char)1,1));
+
     }
 }

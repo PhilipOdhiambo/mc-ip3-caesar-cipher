@@ -15,7 +15,7 @@ class EncodeTest {
         Encode testEncode = new Encode();
         List<Object> expectedOutput = new ArrayList<Object>();
         expectedOutput.add('b');
-        Assertions.assertEquals(expectedOutput, testEncode.encode('a'));
+        Assertions.assertEquals(expectedOutput, testEncode.encode('a', 1));
     }
 
 }

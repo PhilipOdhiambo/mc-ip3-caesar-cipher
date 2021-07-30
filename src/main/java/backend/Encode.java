@@ -4,8 +4,16 @@ import java.util.ArrayList;
 
 public class Encode {
     public char encode(char input, int key) {
-        //
-        char coded = (char) (key + input);
-        return coded;
+        // Upper case letter provided
+        if (( input >= 'A' && input <= 'Z')){
+            return (char) (key + input);
+
+            // Lower case letter provided
+        } else if (input >= 'a' && input <= 'z') {
+            return (char) (key + input);
+        }
+
+        // Character other than alphabet provided
+        return input;
     }
 }

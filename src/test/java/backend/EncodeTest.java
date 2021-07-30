@@ -29,8 +29,8 @@ class EncodeTest {
     void encode_leaveNonAlphabetsAsIs_char() {
         // Non alphabets will not be converted
         Encode testEncode = new Encode();
-        char expected = 1;
-        Assertions.assertEquals(expected,testEncode.encode((char)1,1));
+        char expected = '1';
+        Assertions.assertEquals(expected,testEncode.encode('1',1));
 
     }
 }

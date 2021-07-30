@@ -31,6 +31,12 @@ class EncodeTest {
         Encode testEncode = new Encode();
         char expected = '1';
         Assertions.assertEquals(expected,testEncode.encode('1',1));
+    }
 
+    @Test
+    void encodeOverflow_charAndKeyOverflowRange_char() {
+        Encode testEncode = new Encode();
+        char expected = 'a';
+        Assertions.assertEquals(expected,testEncode.encodeOverflow('y',2));
     }
 }

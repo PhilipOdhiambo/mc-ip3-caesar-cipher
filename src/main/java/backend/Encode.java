@@ -16,4 +16,9 @@ public class Encode {
         // Character other than alphabet provided
         return input;
     }
+
+    public char encodeOverflow(char input, int key) {
+
+        return input;
+    }
 }

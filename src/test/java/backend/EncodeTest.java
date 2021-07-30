@@ -11,11 +11,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class EncodeTest {
     @Test
     public void encode_lowerCase_char() {
-        // Encode a lower case letter
+        // Encode a lower case letter a with key of 1
         Encode testEncode = new Encode();
-        List<Object> expectedOutput = new ArrayList<Object>();
-        expectedOutput.add('b');
+        char expectedOutput = 'b';
         Assertions.assertEquals(expectedOutput, testEncode.encode('a', 1));
     }
 
+    @Test
+    void encode_upperCaseAWithKey1_char() {
+        // Encode uppercase letter 'A' with key of 1;
+        Encode testEncode = new Encode();
+        char expectedOutput = 'B';
+        Assertions.assertEquals(expectedOutput,testEncode.encode('A',1));
+    }
 }

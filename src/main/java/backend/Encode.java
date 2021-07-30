@@ -4,21 +4,22 @@ import java.util.ArrayList;
 
 public class Encode {
     public char encode(char input, int key) {
-        // Upper case letter provided
-        if (( input >= 'A' && input <= 'Z')){
-            return (char) (key + input);
+        // lower case
+        if (( input >= 'a' && input <= 'z')){
+            int inputIndex = input - 'a';
+            int newIndex = (inputIndex + key) % 26;
+            return (char) ('a' + newIndex);
 
-            // Lower case letter provided
-        } else if (input >= 'a' && input <= 'z') {
-            return (char) (key + input);
+            // upper case
+        } else if (input >= 'A' && input <= 'Z') {
+            int inputIndex = input - 'A';
+            int newIndex = (inputIndex + key) % 26;
+            return (char) ('A' + newIndex);
         }
 
         // Character other than alphabet provided
         return input;
     }
 
-    public char encodeOverflow(char input, int key) {
 
-        return input;
-    }
 }

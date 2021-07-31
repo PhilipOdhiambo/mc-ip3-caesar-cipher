@@ -31,7 +31,7 @@ class DecodeTest {
     @Test
     void decode_decodeAlphabetsOverflowingLetterArray_char() {
         Decode testDecode = new  Decode();
-        char expectedOutput = 'Z';
+        char expectedOutput = 'A';
         Assertions.assertEquals(expectedOutput,testDecode.decode('A', 1));
     }
 }

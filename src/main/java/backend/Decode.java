@@ -3,15 +3,35 @@ package backend;
 public class Decode {
     public char decode(char valueToDecode, int decodeKey) {
 
-        if (valueToDecode > 'A' && valueToDecode < 'Z') {
+        if (valueToDecode >= 'A' && valueToDecode <= 'Z') {
+
             // Decode capital letter
-            return (char) ((int) valueToDecode - decodeKey);
+            int valueIndex = valueToDecode - 'A';
+            int newValueIndex = (valueIndex - decodeKey) % 26;
 
-        } else if (valueToDecode > 'a' && valueToDecode < 'z') {
+            if (newValueIndex < 0) {
+                // Subtraction overlap boundary
+                int rectifiedIndex = 26 - Math.abs(newValueIndex);
+                return (char) ('A' + rectifiedIndex);
+            } else {
+                return (char) ('A' + newValueIndex);
+            }
+
+        } else if (valueToDecode >= 'a' && valueToDecode <= 'z') {
+
             // Decode lower case letter
-            return (char) ((int) valueToDecode - decodeKey);
-        }
+            int valueIndex = valueToDecode - 'a';
+            int newValueIndex = (valueIndex - decodeKey) % 26;
 
+            if (newValueIndex < 0) {
+                // Subtraction overlaps boundary
+                int rectifiedIndex = 26 - Math.abs(newValueIndex);
+                return (char) ('a' + rectifiedIndex);
+            } else {
+                return (char) ('a' + newValueIndex);
+            }
+        }
+        // Return unmodified characters;
         return (char) valueToDecode;
     }
 }

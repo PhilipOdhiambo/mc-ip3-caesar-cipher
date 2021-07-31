@@ -2,6 +2,7 @@ package backend;
 
 public class Decode {
     public char decode(char valueToDecode, int decodeKey) {
-        return valueToDecode;
+        int output = (int) valueToDecode - decodeKey;
+        return (char) output;
     }
 }

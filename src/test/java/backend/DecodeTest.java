@@ -14,5 +14,10 @@ class DecodeTest {
         Assertions.assertEquals(expectedOutput, testDecode.decode('b', 1));
     }
 
-
+    @Test
+    void decode_decodeUpperCaseLetterWithinRange_char() {
+        Decode testDecode = new Decode();
+        char expectedOutput = 'A';
+        Assertions.assertEquals(expectedOutput,testDecode.decode('B', 1));
+    }
 }

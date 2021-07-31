@@ -27,4 +27,11 @@ class DecodeTest {
         char expectedOutput = '1';
         Assertions.assertEquals(expectedOutput, testDecode.decode('1', 1));
     }
+
+    @Test
+    void decode_decodeAlphabetsOverflowingLetterArray_char() {
+        Decode testDecode = new  Decode();
+        char expectedOutput = 'Z';
+        Assertions.assertEquals(expectedOutput,testDecode.decode('A', 1));
+    }
 }

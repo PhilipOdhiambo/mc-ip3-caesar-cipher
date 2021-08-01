@@ -15,40 +15,12 @@ public class App {
 
 
         System.out.println("=============== Caesar-Cipher ================");
-        System.out.println("Choose an option:");
-        System.out.println("1. Encrypt Message");
-        System.out.println("2. Decrypt Message");
-        System.out.println("");
-        System.out.print(">> ");
-
-        scanner = new Scanner(System.in);
-        inputString = scanner.next();
-
-        /* ------------- Receive and validate user option ----------------- */
-
-        int option;
-
-        try {
-            option = Integer.parseInt(inputString);
-            if (option < 1 || option > 2) {
-                System.out.println("Invalid option!");
-                return;
-            }
-        } catch (Exception e) {
-            System.out.println("Invalid option!");
-            return;
-        }
-        //scanner.close();
 
         /* ---------------- Receive and validate key  ------------------- */
-
-        // Ask for key
-
         System.out.println("Enter key (1-25):");
         System.out.print(">> ");
+        scanner = new Scanner(System.in);
         inputString = scanner.next();
-
-        // validate key
 
         try {
 
@@ -66,31 +38,32 @@ public class App {
             return;
         }
 
-        /* ------------- Branching based on user option ------ */
 
-        // Option 1 Encrypt
+        /* Enter input String */
 
-        if (option == 1) {
-            Encode encode = new Encode();
-            scanner = new Scanner(System.in);
-            System.out.println("Enter message to encode:");
-            System.out.print(":: ");
-            inputString = scanner.nextLine();
+        System.out.println("");
+        System.out.print("Input String: ");
+        scanner = new Scanner(System.in);
+        inputString = scanner.nextLine();
 
-            for (int i = 0; i < inputString.length(); i ++) {
-                outputString.append(encoder.encode(inputString.charAt(i), 1));
-            }
 
-            System.out.println("Output string:");
-            System.out.println(outputString);
 
+        /* Output Encoded string */
+
+        StringBuilder encodedString = new StringBuilder("");
+        for (int i = 0; i < inputString.length(); i ++) {
+            encodedString.append(encoder.encode(inputString.charAt(i), key));
         }
+        System.out.println("Encrypted string: " + encodedString);
 
 
+        /* Output Decoded string */
 
-
-
-
+        StringBuilder decodedString = new StringBuilder("");
+        for (int i = 0; i < encodedString.length(); i ++) {
+            decodedString.append(decoder.decode(encodedString.charAt(i), key));
+        }
+        System.out.println("Decrypted string: " + decodedString);
 
     }
 }

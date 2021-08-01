@@ -34,7 +34,7 @@ class EncodeTest {
     }
 
     @Test
-    void encodeOverflow_InputPlusKeyOverflowsRange_char() {
+    void encode_inputPlusKeyOverflowsRange_char() {
         Encode testEncode = new Encode();
         char expected = 'a';
         Assertions.assertEquals(expected,testEncode.encode('y',2));

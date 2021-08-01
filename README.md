@@ -8,7 +8,7 @@
 
 ## Description
 
-This app allow you to be able to send secret message by decoding a plain text. The message must not contain numbers 
+This app allows you to be able to send secret message by decoding a plain text. The message must not contain numbers 
 though.
 
 The app can also decrypt an encrypted message. The key is hard coded in the app but will later be dynamic so that
@@ -19,9 +19,9 @@ the users can encrypt and decrypt based on their shared secret key.
 To run a live demo:
 - Ensure you have the latest "jre", java runtime environment, installed on you machine.
 
-- Download the .jar file located at the root folder of the repository and run using the command
-``java -jar download.jar``. Where ``download`` is the name of the downloaded package.
-
+- Download the caesar-cipher.jar file located at the root folder of the repository and 
+  run using the command
+``java -jar caesar-cipher.jar``.
 
 
 ## Technologies Used
